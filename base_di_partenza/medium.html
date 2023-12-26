@@ -9485,14 +9485,23 @@
       </div>
     </footer>
     <script>
-      function cambiaColore() {
-        var elemento = document.getElementById("navbar");
-        var altezza = 400;
-        elemento.addEventListener(scroll);
-        if (elemento.scroll(x - 0, y - 400) <= altezza) {
-          elemento.classList.add("cambiocolore");
+      window.onscroll = function () {
+        if (window.scrollY > 300) {
+          document
+            .getElementsByClassName("navbar")[0]
+            .classList.add("cambiocolore");
+          document
+            .getElementsByClassName("but")[0]
+            .classList.add("colorbutton");
+        } else {
+          document
+            .getElementsByClassName("navbar")[0]
+            .classList.remove("cambiocolore");
+          document
+            .getElementsByClassName("but")[0]
+            .classList.remove("colorbutton");
         }
-      }
+      };
     </script>
   </body>
 </html>
